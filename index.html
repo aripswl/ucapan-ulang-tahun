@@ -1,0 +1,1400 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <title>Untuk Kamu ❤️</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Poppins:wght@300;400;500;600&display=swap');
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #100b0d;
+        color: #fff;
+        font-family: Poppins, sans-serif;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        z-index: -2;
+
+        background: radial-gradient(circle at 15% 20%, rgba(145, 63, 78, 0.22), transparent 30%), radial-gradient(circle at 85% 75%, rgba(205, 165, 110, 0.13), transparent 30%);
+      }
+
+      /* =====================================================
+       OPENING
+    ===================================================== */
+
+      #opening {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        text-align: center;
+        padding: 25px;
+
+        background: #100b0d;
+
+        transition:
+          opacity 1.2s,
+          visibility 1.2s;
+      }
+
+      #opening.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .opening-content {
+        max-width: 520px;
+      }
+
+      .eyebrow {
+        font-size: 10px;
+        letter-spacing: 5px;
+        text-transform: uppercase;
+        color: #d8b487;
+        margin-bottom: 22px;
+      }
+
+      .opening-content h1,
+      .hero h2,
+      .letter h3,
+      .section-title,
+      .final h2 {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 500;
+      }
+
+      .opening-content h1 {
+        font-size: clamp(65px, 15vw, 105px);
+        line-height: 0.8;
+        margin-bottom: 30px;
+      }
+
+      .opening-content p {
+        color: #bdb0b3;
+        font-size: 13px;
+        line-height: 1.9;
+        margin-bottom: 35px;
+      }
+
+      .open-btn {
+        border: 1px solid #cda879;
+        background: rgba(255, 255, 255, 0.035);
+        color: #fff;
+
+        padding: 14px 32px;
+
+        border-radius: 50px;
+
+        cursor: pointer;
+
+        font: 500 13px Poppins;
+
+        transition: 0.35s;
+      }
+
+      .open-btn:hover {
+        background: #d8b487;
+        color: #241719;
+        transform: translateY(-3px);
+      }
+
+      /* =====================================================
+       MAIN
+    ===================================================== */
+
+      #main {
+        opacity: 0;
+        transition: opacity 1.5s;
+      }
+
+      #main.show {
+        opacity: 1;
+      }
+
+      section {
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 80px 20px;
+
+        position: relative;
+      }
+
+      /* =====================================================
+       HERO
+    ===================================================== */
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero .date {
+        color: #d8b487;
+        font-size: 10px;
+        letter-spacing: 5px;
+        margin-bottom: 25px;
+      }
+
+      .hero h2 {
+        font-size: clamp(70px, 16vw, 120px);
+        line-height: 0.75;
+        margin-bottom: 30px;
+      }
+
+      .hero h2 span {
+        color: #d8b487;
+      }
+
+      .hero-description {
+        color: #bdb2b5;
+        max-width: 510px;
+        font-size: 13px;
+        line-height: 1.9;
+      }
+
+      .scroll-text {
+        position: absolute;
+        bottom: 28px;
+
+        font-size: 9px;
+        letter-spacing: 4px;
+
+        text-transform: uppercase;
+
+        color: #74696c;
+
+        animation: float 2s infinite;
+      }
+
+      @keyframes float {
+        50% {
+          transform: translateY(8px);
+        }
+      }
+
+      /* =====================================================
+       LETTER
+    ===================================================== */
+
+      .letter-section {
+        background: rgba(255, 255, 255, 0.015);
+      }
+
+      .letter {
+        width: min(690px, 94%);
+
+        background: #f3ebe2;
+
+        color: #34282a;
+
+        padding: clamp(35px, 7vw, 68px);
+
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+
+        position: relative;
+      }
+
+      .letter::before {
+        content: '';
+
+        position: absolute;
+
+        inset: 13px;
+
+        border: 1px solid rgba(80, 50, 45, 0.12);
+
+        pointer-events: none;
+      }
+
+      .letter > * {
+        position: relative;
+      }
+
+      .letter .eyebrow {
+        text-align: center;
+        color: #99736f;
+      }
+
+      .letter h3 {
+        font-size: 58px;
+        text-align: center;
+
+        font-weight: 600;
+
+        margin-bottom: 30px;
+      }
+
+      .type-line {
+        min-height: 32px;
+
+        margin-bottom: 22px;
+
+        color: #59494b;
+
+        font-size: 14px;
+
+        line-height: 2;
+      }
+
+      .type-line .cursor {
+        display: inline-block;
+
+        width: 1px;
+        height: 18px;
+
+        background: #805256;
+
+        margin-left: 3px;
+
+        vertical-align: -3px;
+
+        animation: blink 0.7s infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .letter-signature {
+        text-align: right;
+
+        font: 31px 'Cormorant Garamond';
+
+        color: #7c4d50;
+
+        margin-top: 35px;
+
+        opacity: 0;
+
+        transition: opacity 1.2s;
+      }
+
+      .letter-signature.show {
+        opacity: 1;
+      }
+
+      /* =====================================================
+       PHOTO SECTION
+    ===================================================== */
+
+      .photo-section {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: clamp(48px, 10vw, 70px);
+      }
+
+      .section-subtitle {
+        color: #a89da0;
+        font-size: 12px;
+        margin: 10px 0 40px;
+      }
+
+      .photo-stack {
+        display: flex;
+
+        gap: 22px;
+
+        justify-content: center;
+
+        align-items: center;
+
+        flex-wrap: wrap;
+      }
+
+      /* =====================================================
+       POLAROID
+    ===================================================== */
+
+      .polaroid {
+        width: min(370px, 90vw);
+
+        background: #f3ebe2;
+
+        padding: 11px 11px 48px;
+
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+
+        opacity: 0;
+
+        transform: translateY(35px) rotate(-4deg);
+
+        transition:
+          opacity 1s,
+          transform 1s;
+      }
+
+      .polaroid.show {
+        opacity: 1;
+
+        transform: translateY(0) rotate(-4deg);
+      }
+
+      .polaroid:nth-child(2) {
+        transform: translateY(35px) rotate(4deg);
+      }
+
+      .polaroid:nth-child(2).show {
+        transform: translateY(0) rotate(4deg);
+      }
+
+      /* =====================================================
+       SCRATCH CARD
+    ===================================================== */
+
+      .scratch-card {
+        position: relative;
+
+        width: 100%;
+
+        aspect-ratio: 4 / 5;
+
+        overflow: hidden;
+
+        border-radius: 3px;
+
+        background: #eee;
+
+        touch-action: none;
+
+        user-select: none;
+      }
+
+      .scratch-card img {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: contain;
+
+        display: block;
+
+        background: #f5f5f5;
+      }
+
+      .scratch-canvas {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+
+        height: 100%;
+
+        cursor: pointer;
+
+        touch-action: none;
+      }
+
+      .scratch-message {
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        text-align: center;
+
+        color: #fff;
+
+        font-size: 22px;
+
+        font-weight: 600;
+
+        letter-spacing: 1px;
+
+        pointer-events: none;
+
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+
+        transition: opacity 0.5s ease;
+
+        z-index: 5;
+      }
+
+      .scratch-message small {
+        display: block;
+
+        margin-top: 8px;
+
+        font-size: 12px;
+
+        font-weight: 400;
+
+        letter-spacing: 0;
+      }
+
+      .scratch-card.completed .scratch-message {
+        opacity: 0;
+      }
+
+      .scratch-card.completed .scratch-canvas {
+        opacity: 0;
+
+        pointer-events: none;
+
+        transition: opacity 0.8s ease;
+      }
+
+      .photo-caption {
+        color: #4b3c3e;
+
+        font: 23px 'Cormorant Garamond';
+
+        margin-top: 12px;
+      }
+
+      /* =====================================================
+       PERSONAL
+    ===================================================== */
+
+      .personal {
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .personal-box {
+        width: min(700px, 94%);
+
+        min-height: 280px;
+
+        padding: 45px 25px;
+
+        border-top: 1px solid rgba(216, 180, 135, 0.28);
+
+        border-bottom: 1px solid rgba(216, 180, 135, 0.28);
+      }
+
+      .question {
+        color: #a99c9f;
+
+        font-size: 12px;
+
+        margin-bottom: 30px;
+      }
+
+      .personal-text {
+        font: clamp(29px, 6vw, 43px) / 1.35 'Cormorant Garamond';
+      }
+
+      .personal-text span {
+        color: #d8b487;
+      }
+
+      /* =====================================================
+       FINAL
+    ===================================================== */
+
+      .final {
+        min-height: 85vh;
+
+        text-align: center;
+
+        flex-direction: column;
+      }
+
+      .final-heart {
+        font-size: 54px;
+
+        margin-bottom: 25px;
+
+        animation: heartbeat 1.5s infinite;
+      }
+
+      @keyframes heartbeat {
+        50% {
+          transform: scale(1.15);
+        }
+      }
+
+      .final h2 {
+        font-size: clamp(55px, 11vw, 82px);
+
+        line-height: 0.85;
+
+        margin-bottom: 28px;
+      }
+
+      .final p {
+        max-width: 510px;
+
+        color: #a99ea0;
+
+        font-size: 13px;
+
+        line-height: 1.9;
+      }
+
+      .from {
+        margin-top: 35px;
+
+        color: #d8b487;
+
+        font: 25px 'Cormorant Garamond';
+      }
+
+      /* =====================================================
+       MUSIC
+    ===================================================== */
+
+      .music-btn {
+        position: fixed;
+
+        right: 20px;
+        bottom: 20px;
+
+        width: 48px;
+        height: 48px;
+
+        border-radius: 50%;
+
+        border: 1px solid rgba(216, 180, 135, 0.4);
+
+        background: rgba(20, 13, 15, 0.82);
+
+        color: #fff;
+
+        z-index: 100;
+
+        cursor: pointer;
+      }
+
+      /* =====================================================
+       FLOATING HEART
+    ===================================================== */
+
+      .heart-particle {
+        position: fixed;
+
+        bottom: -20px;
+
+        z-index: 20;
+
+        pointer-events: none;
+
+        animation: rise linear forwards;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(0) rotate(0);
+
+          opacity: 0;
+        }
+
+        15% {
+          opacity: 0.8;
+        }
+
+        100% {
+          transform: translateY(-110vh) rotate(360deg);
+
+          opacity: 0;
+        }
+      }
+
+      /* =====================================================
+       CONFETTI
+    ===================================================== */
+
+      .confetti {
+        position: fixed;
+
+        top: -15px;
+
+        z-index: 2000;
+
+        pointer-events: none;
+
+        animation: fall 3s linear forwards;
+      }
+
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(720deg);
+
+          opacity: 0;
+        }
+      }
+
+      /* =====================================================
+       MOBILE
+    ===================================================== */
+
+      @media (max-width: 600px) {
+        section {
+          padding: 65px 16px;
+        }
+
+        .letter h3 {
+          font-size: 48px;
+        }
+
+        .type-line {
+          font-size: 13px;
+        }
+
+        .photo-stack {
+          gap: 30px;
+        }
+
+        .scratch-message {
+          font-size: 18px;
+        }
+
+        .scratch-message small {
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- =====================================================
+       OPENING
+  ===================================================== -->
+
+    <div id="opening">
+      <div class="opening-content">
+        <div class="eyebrow">A little something for you</div>
+
+        <h1>
+          Untuk<br />
+          Kamu.
+        </h1>
+
+        <p>Ada sesuatu yang ingin aku sampaikan di hari spesial kamu.</p>
+
+        <button
+          class="open-btn"
+          onclick="openCard()"
+        >
+          ♡ Buka untuk melihat
+        </button>
+      </div>
+    </div>
+
+    <!-- =====================================================
+       MAIN
+  ===================================================== -->
+
+    <main id="main">
+      <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+      <section class="hero">
+        <div class="date">27 SEPTEMBER 2026</div>
+
+        <h2>
+          Happy<br />
+          <span>Birthday.</span>
+        </h2>
+
+        <p class="hero-description">Hari ini adalah tentang kamu. Tentang bertambahnya satu tahun, satu cerita baru, dan banyak hal baik yang semoga menunggu di depan.</p>
+
+        <div class="scroll-text">Scroll perlahan ↓</div>
+      </section>
+
+      <!-- ===================================================
+         LETTER
+    ==================================================== -->
+
+      <section class="letter-section">
+        <div class="letter">
+          <div class="eyebrow">A letter for you</div>
+
+          <h3>Hai, Sayang.</h3>
+
+          <div id="typingArea"></div>
+
+          <div
+            id="signature"
+            class="letter-signature"
+          >
+            — dari aku, yang sayang kamu
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================
+         PHOTO
+    ==================================================== -->
+
+      <section class="photo-section">
+        <h2 class="section-title">A few memories.</h2>
+
+        <p class="section-subtitle">Gosok perlahan untuk melihat foto kita ❤️</p>
+
+        <div class="photo-stack">
+          <!-- FOTO 1 -->
+
+          <div
+            class="polaroid"
+            id="photo1"
+          >
+            <div class="scratch-card">
+              <img
+                src="foto1.jpeg"
+                alt="Foto pertama"
+              />
+
+              <canvas class="scratch-canvas"></canvas>
+
+              <div class="scratch-message">
+                ✨<br />
+
+                Gosok di sini
+
+                <small> untuk melihat foto ❤️ </small>
+              </div>
+            </div>
+
+            <div class="photo-caption">One of my favorites ❤️</div>
+          </div>
+
+          <!-- FOTO 2 -->
+
+          <div
+            class="polaroid"
+            id="photo2"
+          >
+            <div class="scratch-card">
+              <img
+                src="foto2.jpeg"
+                alt="Foto kedua"
+              />
+
+              <canvas class="scratch-canvas"></canvas>
+
+              <div class="scratch-message">
+                ✨<br />
+
+                Gosok di sini
+
+                <small> untuk melihat foto ❤️ </small>
+              </div>
+            </div>
+
+            <div class="photo-caption">Our little moment ❤️</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================
+         PERSONAL MESSAGE
+    ==================================================== -->
+
+      <section class="personal">
+        <div class="personal-box">
+          <div class="question">Kalau suatu hari kamu bertanya...</div>
+
+          <div
+            class="personal-text"
+            id="personalText"
+          ></div>
+        </div>
+      </section>
+
+      <!-- ===================================================
+         FINAL
+    ==================================================== -->
+
+      <section class="final">
+        <div class="final-heart">❤️</div>
+
+        <h2>
+          Happy Birthday,<br />
+          Sayang.
+        </h2>
+
+        <p>
+          Semoga di umur yang baru ini, banyak hal baik datang ke hidup kamu.
+
+          <br /><br />
+
+          Semoga kamu selalu diberi kesehatan, kebahagiaan, dan kekuatan untuk mengejar semua hal yang kamu inginkan.
+
+          <br /><br />
+
+          Dan semoga, di antara banyak hal baik yang datang nanti, aku masih bisa menjadi salah satu bagian kecil di dalamnya.
+        </p>
+
+        <div class="from">— dari aku ❤️</div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+       MUSIC
+  ===================================================== -->
+
+    <button
+      class="music-btn"
+      id="musicButton"
+      onclick="toggleMusic()"
+      aria-label="Putar atau jeda musik"
+    >
+      ♪
+    </button>
+
+    <audio
+      id="music"
+      preload="auto"
+      loop
+    ></audio>
+
+    <script>
+      /* =====================================================
+       LETTER TEXT
+    ===================================================== */
+
+      const letterTexts = [
+        'Selamat ulang tahun ❤️',
+
+        'Aku sebenarnya nggak terlalu pandai merangkai kata.',
+
+        'Tapi untuk hari ini, aku ingin mencoba menyampaikan sesuatu yang mungkin belum terlalu sering aku bilang.',
+
+        'Semoga di umur yang baru ini, banyak hal baik yang datang ke kamu.',
+
+        'Semoga apa yang sedang kamu usahakan perlahan menemukan jalannya.',
+
+        'Dan semoga kamu selalu punya alasan untuk tersenyum setiap harinya.',
+
+        'Aku sebenarnya ingin memberikan sesuatu untuk kamu hari ini.',
+
+        'Tapi maaf... kali ini aku belum bisa memberikan hadiah seperti yang aku inginkan.',
+
+        'Jadi aku membuat sesuatu yang sederhana ini.',
+
+        'Mungkin nggak seberapa, tapi aku membuatnya khusus untuk kamu.',
+
+        'Terima kasih sudah hadir dan menjadi bagian dari cerita hidupku sampai hari ini.',
+
+        'Semoga kamu selalu bahagia. ❤️',
+      ];
+
+      /* =====================================================
+       OPEN CARD
+    ===================================================== */
+
+      let cardOpened = false;
+
+      function openCard() {
+        if (cardOpened) return;
+
+        cardOpened = true;
+
+        // Mulai musik setelah tombol ditekan.
+        startMusic();
+
+        document.getElementById('opening').classList.add('hide');
+
+        setTimeout(function () {
+          document.getElementById('main').classList.add('show');
+
+          startLetter();
+
+          createConfetti();
+
+          setInterval(createHeart, 900);
+        }, 700);
+      }
+
+      /* =====================================================
+       LETTER
+    ===================================================== */
+
+      let letterStarted = false;
+
+      function startLetter() {
+        if (letterStarted) return;
+
+        letterStarted = true;
+
+        const section = document.querySelector('.letter-section');
+
+        const observer = new IntersectionObserver(
+          function (entries) {
+            if (entries[0].isIntersecting) {
+              observer.disconnect();
+
+              typeAllLines();
+            }
+          },
+          {
+            threshold: 0.25,
+          },
+        );
+
+        observer.observe(section);
+      }
+
+      async function typeAllLines() {
+        const area = document.getElementById('typingArea');
+
+        for (let i = 0; i < letterTexts.length; i++) {
+          const line = document.createElement('div');
+
+          line.className = 'type-line';
+
+          area.appendChild(line);
+
+          await typeText(line, letterTexts[i]);
+
+          await wait(650);
+        }
+
+        document.getElementById('signature').classList.add('show');
+      }
+
+      function typeText(element, text) {
+        return new Promise(function (resolve) {
+          let index = 0;
+
+          const cursor = document.createElement('span');
+
+          cursor.className = 'cursor';
+
+          element.appendChild(cursor);
+
+          function write() {
+            if (index < text.length) {
+              cursor.insertAdjacentText('beforebegin', text.charAt(index));
+
+              index++;
+
+              const speed = ['.', '?', '!'].includes(text.charAt(index - 1)) ? 110 : 35;
+
+              setTimeout(write, speed);
+            } else {
+              cursor.remove();
+
+              resolve();
+            }
+          }
+
+          write();
+        });
+      }
+
+      function wait(ms) {
+        return new Promise(function (resolve) {
+          setTimeout(resolve, ms);
+        });
+      }
+
+      /* =====================================================
+       PHOTO APPEAR
+    ===================================================== */
+
+      const photoObserver = new IntersectionObserver(
+        function (entries) {
+          if (entries[0].isIntersecting) {
+            setTimeout(function () {
+              document.getElementById('photo1').classList.add('show');
+            }, 300);
+
+            setTimeout(function () {
+              document.getElementById('photo2').classList.add('show');
+            }, 1000);
+
+            photoObserver.disconnect();
+          }
+        },
+        {
+          threshold: 0.2,
+        },
+      );
+
+      photoObserver.observe(document.querySelector('.photo-section'));
+
+      /* =====================================================
+       PERSONAL MESSAGE
+    ===================================================== */
+
+      const personalLines = ['Kenapa aku membuat semua ini?', 'Karena aku ingin kamu tahu...', 'aku senang bisa mengenal kamu. ❤️'];
+
+      let personalStarted = false;
+
+      const personalObserver = new IntersectionObserver(
+        function (entries) {
+          if (entries[0].isIntersecting && !personalStarted) {
+            personalStarted = true;
+
+            typePersonal();
+
+            personalObserver.disconnect();
+          }
+        },
+        {
+          threshold: 0.35,
+        },
+      );
+
+      personalObserver.observe(document.querySelector('.personal'));
+
+      async function typePersonal() {
+        const element = document.getElementById('personalText');
+
+        for (let i = 0; i < personalLines.length; i++) {
+          const line = document.createElement('div');
+
+          if (i === 0) {
+            line.style.fontSize = '55%';
+
+            line.style.color = '#a99c9f';
+
+            line.style.marginBottom = '25px';
+          }
+
+          element.appendChild(line);
+
+          await typeText(line, personalLines[i]);
+
+          await wait(900);
+        }
+      }
+
+      /* =====================================================
+       MUSIC - SATU LAGU
+    ===================================================== */
+
+      const music = document.getElementById('music');
+
+      const musicButton = document.getElementById('musicButton');
+
+      // File MP3 berada di folder yang sama
+      // dengan file HTML.
+      const song = 'sampai-jadi-debu.mp3';
+
+      let musicStarted = false;
+
+      function startMusic() {
+        if (musicStarted) return;
+
+        music.src = song;
+
+        music.loop = true;
+
+        music.volume = 0;
+
+        const playPromise = music.play();
+
+        if (playPromise !== undefined) {
+          playPromise
+            .then(function () {
+              musicStarted = true;
+
+              musicButton.textContent = '♫';
+
+              // Fade in musik
+              let volume = 0;
+
+              const fadeIn = setInterval(function () {
+                volume += 0.03;
+
+                if (volume >= 0.65) {
+                  volume = 0.65;
+
+                  clearInterval(fadeIn);
+                }
+
+                music.volume = volume;
+              }, 80);
+            })
+
+            .catch(function () {
+              // Browser menolak
+              // pemutaran otomatis.
+              musicStarted = false;
+            });
+        }
+      }
+
+      function toggleMusic() {
+        if (music.paused) {
+          music
+            .play()
+            .then(function () {
+              music.volume = 0.65;
+
+              musicStarted = true;
+
+              musicButton.textContent = '♫';
+            })
+
+            .catch(function () {});
+        } else {
+          music.pause();
+
+          musicButton.textContent = '♪';
+        }
+      }
+
+      /* =====================================================
+       FLOATING HEART
+    ===================================================== */
+
+      function createHeart() {
+        const heart = document.createElement('div');
+
+        heart.className = 'heart-particle';
+
+        heart.textContent = Math.random() > 0.5 ? '♥' : '♡';
+
+        heart.style.left = Math.random() * 100 + 'vw';
+
+        heart.style.fontSize = 10 + Math.random() * 15 + 'px';
+
+        heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+
+        document.body.appendChild(heart);
+
+        setTimeout(function () {
+          heart.remove();
+        }, 10000);
+      }
+
+      /* =====================================================
+       CONFETTI
+    ===================================================== */
+
+      function createConfetti() {
+        const symbols = ['✦', '•', '♥', '✧'];
+
+        for (let i = 0; i < 70; i++) {
+          const item = document.createElement('div');
+
+          item.className = 'confetti';
+
+          item.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+          item.style.left = Math.random() * 100 + 'vw';
+
+          item.style.fontSize = 8 + Math.random() * 10 + 'px';
+
+          item.style.animationDuration = 2 + Math.random() * 3 + 's';
+
+          item.style.animationDelay = Math.random() * 1.5 + 's';
+
+          document.body.appendChild(item);
+
+          setTimeout(function () {
+            item.remove();
+          }, 5000);
+        }
+      }
+
+      /* =====================================================
+       SCRATCH CARD
+    ===================================================== */
+
+      function createScratchCard(card) {
+        const canvas = card.querySelector('.scratch-canvas');
+
+        const ctx = canvas.getContext('2d');
+
+        let isScratching = false;
+
+        let scratched = 0;
+
+        /* =========================
+         SETUP CANVAS
+      ========================= */
+
+        function setupCanvas() {
+          const rect = card.getBoundingClientRect();
+
+          canvas.width = rect.width;
+
+          canvas.height = rect.height;
+
+          ctx.globalCompositeOperation = 'source-over';
+
+          const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+
+          gradient.addColorStop(0, '#d8b4a0');
+
+          gradient.addColorStop(0.5, '#b88b72');
+
+          gradient.addColorStop(1, '#d8b4a0');
+
+          ctx.fillStyle = gradient;
+
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          ctx.fillStyle = 'rgba(255,255,255,.18)';
+
+          ctx.font = 'bold 20px Arial';
+
+          ctx.textAlign = 'center';
+
+          ctx.fillText('SCRATCH ME', canvas.width / 2, canvas.height / 2 + 80);
+        }
+
+        setupCanvas();
+
+        /* =========================
+         POSISI MOUSE / JARI
+      ========================= */
+
+        function getPosition(e) {
+          const rect = canvas.getBoundingClientRect();
+
+          let x;
+
+          let y;
+
+          if (e.touches && e.touches.length > 0) {
+            x = e.touches[0].clientX - rect.left;
+
+            y = e.touches[0].clientY - rect.top;
+          } else {
+            x = e.clientX - rect.left;
+
+            y = e.clientY - rect.top;
+          }
+
+          return {
+            x: x,
+            y: y,
+          };
+        }
+
+        /* =========================
+         MENGGOSOK
+      ========================= */
+
+        function scratch(e) {
+          if (!isScratching) return;
+
+          e.preventDefault();
+
+          const pos = getPosition(e);
+
+          ctx.globalCompositeOperation = 'destination-out';
+
+          ctx.beginPath();
+
+          ctx.arc(pos.x, pos.y, 28, 0, Math.PI * 2);
+
+          ctx.fill();
+
+          scratched++;
+
+          if (scratched > 35) {
+            card.classList.add('completed');
+          }
+        }
+
+        /* =========================
+         MOUSE
+      ========================= */
+
+        canvas.addEventListener('mousedown', function (e) {
+          isScratching = true;
+
+          scratch(e);
+        });
+
+        canvas.addEventListener('mousemove', function (e) {
+          scratch(e);
+        });
+
+        canvas.addEventListener('mouseup', function () {
+          isScratching = false;
+        });
+
+        canvas.addEventListener('mouseleave', function () {
+          isScratching = false;
+        });
+
+        /* =========================
+         HP / TOUCH
+      ========================= */
+
+        canvas.addEventListener(
+          'touchstart',
+          function (e) {
+            isScratching = true;
+
+            scratch(e);
+          },
+          {
+            passive: false,
+          },
+        );
+
+        canvas.addEventListener(
+          'touchmove',
+          function (e) {
+            scratch(e);
+          },
+          {
+            passive: false,
+          },
+        );
+
+        canvas.addEventListener('touchend', function () {
+          isScratching = false;
+        });
+
+        /* =========================
+         RESPONSIVE
+      ========================= */
+
+        window.addEventListener('resize', function () {
+          if (!card.classList.contains('completed')) {
+            setupCanvas();
+          }
+        });
+      }
+
+      /* =====================================================
+       JALANKAN SCRATCH CARD
+    ===================================================== */
+
+      document.querySelectorAll('.scratch-card').forEach(function (card) {
+        createScratchCard(card);
+      });
+    </script>
+  </body>
+</html>
